@@ -26,16 +26,29 @@ public class EventController {
         return "events/index";
     }
 
+    //lives at /events/create
     @GetMapping("create")
     public String displayCreateEventForm(Model model) {
         model.addAttribute("title", "Create Event");
         return "events/create";
     }
 
+    //lives at /events/create
     @PostMapping("create")
     public String processCreateEventForm(@RequestParam String eventName) {
         events.add(eventName);
         return "redirect:";
     }
 
+//    //lives at /events/create
+//    @GetMapping
+//    public String renderCreateEventForm() {
+//        return "events/create";
+//    }
+//
+//    @PostMapping
+//    public String createEvent(@RequestParam String eventName) {
+//        events.add(eventName);
+//        return "redirect:";
+//    }
 }
